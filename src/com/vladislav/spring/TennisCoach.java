@@ -6,7 +6,6 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component
-@Scope("prototype")
 public class TennisCoach implements Coach {
 	
 	@Autowired
@@ -45,5 +44,7 @@ public class TennisCoach implements Coach {
 		// TODO Auto-generated method stub
 		return fortuneService.getFurtune();
 	}
+	
+
 
 }
