@@ -1,7 +1,6 @@
 package com.vladislav.spring;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class ConfigDemoApp {
 
@@ -11,7 +10,7 @@ public class ConfigDemoApp {
 	AnnotationConfigApplicationContext context =
 			new AnnotationConfigApplicationContext(SportConfig.class);
 	// get the bean from spring container
-	Coach theCoach = context.getBean("volley", Coach.class);
+	VolleyballCoach theCoach = context.getBean("volleyballCoach", VolleyballCoach.class);
 	
 	//call a method on the bean
 	System.out.println(theCoach.getDailyWorkout());
@@ -19,7 +18,11 @@ public class ConfigDemoApp {
 	//call method to get the daily fortune
 	System.out.println(theCoach.getDailyFortune());
 	
-	// close the context
+	System.out.println(theCoach.getTeamName());
+	
+	System.out.println(theCoach.getEmail());
+	
+	// close the context@Bean
 	context.close();
 
 	}
